@@ -5,8 +5,10 @@ import { Login } from "./login.vm";
 import { isValidLogin } from "./login.api";
 import { routes } from "../../core/router";
 import { useSnackbarContext } from "../../common/components/snackbar";
+import { AuthContext } from "../../core/auth";
 
 export const LoginContainer: React.FC = () => {
+	const { setUserSession } = React.useContext(AuthContext);
 	const history = useHistory();
 	const { showMessage } = useSnackbarContext();
 
@@ -18,7 +20,10 @@ export const LoginContainer: React.FC = () => {
 		}
 	};
 	const handleLogin = (login: Login) => {
-		isValidLogin(login.username, login.password).then(loginSucceded);
+		isValidLogin(login.username, login.password).then((result) => {
+			setUserSession({ userName: login.username });
+			loginSucceded(result);
+		});
 	};
 	return (
 		<>
