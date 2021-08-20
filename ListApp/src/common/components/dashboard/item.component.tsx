@@ -32,7 +32,7 @@ export const ItemComponent: React.FunctionComponent<Props> = (props) => {
 			to={linkTo}
 			data-testid={dataTestId}
 		>
-			<Icon className={css(innerClasses.icon, classes.icon).toString()} />
+			<Icon css={css(innerClasses.icon, classes.icon)} />
 			<Typography
 				variant="h5"
 				css={css(innerClasses.title, classes.title)}
