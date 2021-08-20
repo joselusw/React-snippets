@@ -18,10 +18,12 @@ export const RouterComponent: React.FunctionComponent = () => {
 					component={LoginScene}
 				/>
 				<Route
+					exact={true}
 					path={switchRoutes.submoduleList}
 					component={SubmoduleListScene}
 				/>
 				<Route
+					exact={true}
 					path={switchRoutes.employees}
 					component={EmployeeListScene}
 				/>

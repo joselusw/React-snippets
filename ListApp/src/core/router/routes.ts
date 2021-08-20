@@ -12,8 +12,8 @@ export const switchRoutes: SwitchRoutes = {
 	root: "/",
 	login: "/login",
 	submoduleList: "/submodule-list",
-	employees: "employees",
-	editEmployee: "employees/:id",
+	employees: "/employees",
+	editEmployee: "/employees/:id",
 };
 
 interface Routes extends Omit<SwitchRoutes, "editEmployee"> {
