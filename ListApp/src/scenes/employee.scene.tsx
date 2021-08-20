@@ -1,5 +1,11 @@
+import { AppLayout } from "../layouts";
+import { EmployeeContainer } from "../pods/employee";
 import * as React from "react";
 
 export const EmployeeScene: React.FC = () => {
-	return <h1>EmployeeScene</h1>;
+	return (
+		<AppLayout>
+			<EmployeeContainer />
+		</AppLayout>
+	);
 };
